@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - develop
+      - test
   pull_request:
     branches:
       - master
@@ -72,13 +73,16 @@ jobs:
         appimagetool -n appdir
 
     - name: Upload AppImage
-      if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop'
+      if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/test'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
         if [ "${{ github.ref }}" == "refs/heads/develop" ]; then
           export UPLOADTOOL_SUFFIX=develop
+        fi
+        if [ "${{ github.ref }}" == "refs/heads/test" ]; then
+          export UPLOADTOOL_SUFFIX=test
         fi
         RELEASE_NOTES=$(cat ./development/release-notes/release-${{ github.ref_name }}.md)
         export VERSION=$(cat appdir/usr/share/nixnote2/version.txt)
