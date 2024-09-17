@@ -81,9 +81,6 @@ jobs:
         if [ "${{ github.ref }}" == "refs/heads/develop" ]; then
           export UPLOADTOOL_SUFFIX=develop
         fi
-        if [ "${{ github.ref }}" == "refs/heads/test" ]; then
-          export UPLOADTOOL_SUFFIX=test
-        fi
         RELEASE_NOTES=$(cat ./development/release-notes/release-${{ github.ref_name }}.md)
         export VERSION=$(cat appdir/usr/share/nixnote2/version.txt)
         export UPLOADTOOL_BODY="$RELEASE_NOTES - Version: **${VERSION}** - [GitHub Actions build log](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})."
