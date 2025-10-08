@@ -273,7 +273,7 @@ windeployqt.exe --compiler-runtime --libdir [deployment_folder] [deployment_fold
 bash development/deploy-on-windows.sh [deployment_folder]
 ```
 
-If you need spell check, you have to download the dictionary files and copy the .aff and .dic file to the deployment folder. You may want to download them [here](https://github.com/wooorm/dictionaries).
+If you need spell check, you have to download the dictionary files and copy the .aff and .dic file to the deployment folder. You can download them [here](https://github.com/wooorm/dictionaries). And you have to rename the prefix to XX_XX, such as en_GB, en_GB, the underscore is essential for Nixnote2 to recognize it.
 
 
 ## Donations
