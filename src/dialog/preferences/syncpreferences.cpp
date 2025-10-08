@@ -98,9 +98,9 @@ SyncPreferences::SyncPreferences(QWidget *parent) :
     mainLayout->addWidget(userId,8,1);
     mainLayout->addWidget(passwordLabel,9,0);
     mainLayout->addWidget(password,9,1);
-    mainLayout->addWidget(restartLabel,10,0);
-    mainLayout->addWidget(threadNumberLabel, 11,0);
-    mainLayout->addWidget(threadNumber, 11,1);
+    mainLayout->addWidget(threadNumberLabel, 10,0);
+    mainLayout->addWidget(threadNumber, 10,1);
+    mainLayout->addWidget(restartLabel,11,0);
     mainLayout->setAlignment(Qt::AlignTop);
 
     global.settings->beginGroup(INI_GROUP_SYNC);
