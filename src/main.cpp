@@ -208,7 +208,7 @@ int main(int argc, char *argv[]) {
         if (sharedMemory->isAttached()) {
             sharedMemory->detach();
         }
-        if (retval1) {
+        if (retval1 == 0) {
             QLOG_INFO() << "Exit OK: retcode=" << retval1;
         } else {
             QLOG_ERROR() << "Exit FAILURE: retcode=" << retval1;
