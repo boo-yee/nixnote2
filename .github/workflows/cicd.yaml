@@ -72,6 +72,7 @@ jobs:
         rm -f appdir/usr/lib/libnss3.so
         rm -f appdir/usr/lib/libnssutil3.so
         appimagetool -n appdir
+        chmod +x NixNote2-x86_64.AppImage 
 
     - name: Upload AppImage
       if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop'
